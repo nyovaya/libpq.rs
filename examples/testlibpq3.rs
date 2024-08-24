@@ -61,7 +61,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
      */
 
     /* Here is our out-of-line parameter value */
-    let param_values: Vec<Option<&[u8]>> = vec![Some(b"joe's place\0")];
+    let param_values: [Option<&[u8]>; 1] = [Some(b"joe's place\0")];
 
     let res = conn.exec_params(
         "SELECT * FROM test1 WHERE t = $1",
